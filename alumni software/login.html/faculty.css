@@ -1,0 +1,133 @@
+/* ===========================
+   THEME: DEPARTMENT BLUEPRINT (Faculty)
+=========================== */
+
+.theme-faculty {
+    --bg: #f4f2ec;
+    --surface: #fffdf8;
+    --text: #22201a;
+    --muted: #74705f;
+    --primary: #0f2942;
+    --primary-2: #17436b;
+    --accent: #c9a227;
+    --accent-2: #5fa8d3;
+    --radius: 4px;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Archivo', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* ---- Hero: blueprint elevation drawing ---- */
+
+.theme-faculty .hero {
+    background:
+        repeating-linear-gradient(0deg, rgba(95,168,211,.14) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(90deg, rgba(95,168,211,.14) 0 1px, transparent 1px 28px),
+        linear-gradient(160deg, #0f2942, #0a1d31);
+    border-bottom: 3px solid var(--accent);
+}
+
+.theme-faculty .hero h1 { font-weight: 600; }
+
+.theme-faculty .hero p { font-family: var(--font-body); }
+
+.theme-faculty .blueprint-draw {
+    stroke: var(--accent-2);
+    fill: none;
+    stroke-width: 2;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2.4s ease forwards;
+}
+
+.theme-faculty .blueprint-dim {
+    stroke: var(--accent);
+    stroke-width: 1;
+    opacity: .8;
+}
+
+.theme-faculty .blueprint-fill { fill: rgba(95,168,211,.08); }
+
+.theme-faculty .blueprint-label {
+    font-family: var(--font-mono);
+    fill: var(--accent-2);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
+}
+
+.theme-faculty .role-tag { background: rgba(201,162,39,.18); color: var(--accent); }
+
+/* ---- Department cards as drawing panels ---- */
+
+.theme-faculty .dept-card {
+    background:
+        repeating-linear-gradient(0deg, rgba(15,41,66,.05) 0 1px, transparent 1px 18px),
+        repeating-linear-gradient(90deg, rgba(15,41,66,.05) 0 1px, transparent 1px 18px),
+        var(--surface);
+    border: 1px dashed #cabf9e;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.theme-faculty .dept-card::before,
+.theme-faculty .dept-card::after {
+    content: "";
+    position: absolute;
+    width: 10px; height: 10px;
+    border-top: 2px solid var(--accent);
+    border-left: 2px solid var(--accent);
+    top: 8px; left: 8px;
+}
+
+.theme-faculty .dept-card::after {
+    top: auto; left: auto;
+    bottom: 8px; right: 8px;
+    border-top: none; border-left: none;
+    border-bottom: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+}
+
+.theme-faculty .dept-card h3 {
+    font-family: var(--font-display);
+    letter-spacing: .5px;
+}
+
+.theme-faculty .dept-card p {
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+.theme-faculty .dept-card.active {
+    border: 1px solid var(--accent);
+    background: #fbf6e8;
+}
+
+/* ---- Department alumni list ---- */
+
+.theme-faculty #deptAlumniTitle {
+    font-family: var(--font-mono);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 4px;
+}
+
+.theme-faculty .person {
+    border-radius: var(--radius);
+    border: 1px solid #e4ddc9;
+}
+
+.theme-faculty .person h3 { font-family: var(--font-display); }
+
+.theme-faculty .person button {
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .5px;
+}
+
+.theme-faculty .section-title {
+    font-weight: 600;
+}

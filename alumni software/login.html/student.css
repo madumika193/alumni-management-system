@@ -1,0 +1,171 @@
+/* ===========================
+   THEME: CAMPUS CIRCUIT (Student)
+=========================== */
+
+.theme-student {
+    --bg: #f5f8fc;
+    --surface: #ffffff;
+    --text: #16213d;
+    --muted: #6b7897;
+    --primary: #0a1f44;
+    --primary-2: #10306b;
+    --accent: #ffc93c;
+    --accent-2: #00c2d1;
+    --radius: 14px;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ---- Hero: circuit board skyline ---- */
+
+.theme-student .hero {
+    background: radial-gradient(circle at 15% 20%, #10306b 0%, #0a1f44 55%, #071531 100%);
+    padding-bottom: 0;
+}
+
+.theme-student .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 30px;
+    align-items: end;
+}
+
+.theme-student .hero p {
+    font-family: var(--font-body);
+}
+
+.theme-student .hero-circuit {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.theme-student .trace {
+    fill: none;
+    stroke: var(--accent-2);
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: .85;
+    stroke-dasharray: 6 10;
+    animation: dashFlow 6s linear infinite;
+}
+
+.theme-student .trace.trace-2 { stroke: var(--accent); animation-duration: 8s; animation-direction: reverse; }
+.theme-student .trace.trace-3 { stroke: #7de3ff; animation-duration: 5s; }
+
+.theme-student .node {
+    fill: var(--accent);
+}
+
+.theme-student .node.node-alt { fill: var(--accent-2); }
+
+.theme-student .skyline { fill: #0e2a5c; }
+
+@keyframes dashFlow {
+    to { stroke-dashoffset: -160; }
+}
+
+.theme-student .role-tag { background: rgba(255, 201, 60, .18); color: var(--accent); }
+
+/* ---- Node-style person cards ---- */
+
+.theme-student .person {
+    border-top: 3px solid var(--accent-2);
+}
+
+.theme-student .person::before {
+    content: "";
+    position: absolute;
+    top: -3px; left: 50%;
+    transform: translateX(-50%);
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 201, 60, .25);
+}
+
+.theme-student .person h3::before {
+    content: "// ";
+    font-family: var(--font-mono);
+    color: var(--accent-2);
+    font-size: 13px;
+}
+
+/* ---- Section labels ---- */
+
+.theme-student .section-title { font-family: var(--font-display); }
+
+.theme-student #directory input,
+.theme-student .chat-input-row input {
+    font-family: var(--font-mono);
+    font-size: 14px;
+}
+
+/* ---- Posts ---- */
+
+.theme-student .post-card {
+    border-left: 4px solid var(--accent-2);
+}
+
+.theme-student .post-avatar {
+    background: var(--primary);
+    border: 2px solid var(--accent-2);
+}
+
+.theme-student .post-batch {
+    font-family: var(--font-mono);
+    background: #eef6ff;
+    color: var(--primary-2);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.theme-student .post-actions button {
+    background: #eef3fb;
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 13px;
+}
+
+/* ---- Chat ---- */
+
+.theme-student .chat-container {
+    border: 1px solid #e3e9f5;
+}
+
+.theme-student .chat-avatar {
+    background: var(--accent-2);
+    color: var(--primary);
+}
+
+.theme-student .chat-contact.active {
+    border-left: 4px solid var(--accent-2);
+    background: #eef8fb;
+}
+
+.theme-student .msg.sent {
+    background: var(--primary);
+}
+
+.theme-student .msg.received {
+    background: #eef3fb;
+}
+
+.theme-student .chat-input-row button {
+    background: var(--accent-2);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.theme-student .chat-input-row button:hover {
+    background: #17d3e2;
+}
+
+/* ---- Buttons ---- */
+
+.theme-student .event button,
+.theme-student .person button {
+    font-family: var(--font-mono);
+    font-size: 13px;
+}

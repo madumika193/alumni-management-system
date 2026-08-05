@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSN Alumni Network - Login</title>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="login-container">
+
+    <!-- Left Side -->
+    <div class="left-panel">
+
+        <svg viewBox="0 0 600 800" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M40 0H0V40" fill="none" stroke="#5fa8d3" stroke-opacity=".12" stroke-width="1"/>
+                </pattern>
+            </defs>
+
+            <rect width="600" height="800" fill="url(#gridPattern)"/>
+
+            <!-- network trace lines linking student / faculty / alumni -->
+            <g fill="none" stroke="#00c2d1" stroke-opacity=".55" stroke-width="1.5">
+                <path d="M60 140 L180 140 L180 210 L320 210"/>
+                <path d="M420 90 L420 190 L500 190"/>
+                <path d="M100 320 L220 320 L260 380"/>
+            </g>
+            <g fill="#ffc93c">
+                <circle cx="60" cy="140" r="4"/>
+                <circle cx="320" cy="210" r="4"/>
+                <circle cx="420" cy="90" r="4"/>
+                <circle cx="500" cy="190" r="4"/>
+                <circle cx="100" cy="320" r="4"/>
+                <circle cx="260" cy="380" r="4"/>
+            </g>
+
+            <!-- campus skyline -->
+            <g fill="#0e2a5c">
+                <rect x="40" y="520" width="90" height="220"/>
+                <rect x="150" y="470" width="70" height="270"/>
+                <rect x="240" y="560" width="80" height="180"/>
+                <rect x="440" y="500" width="100" height="240"/>
+                <path d="M320 560 L320 740 L440 740 L440 560 L380 480 Z"/>
+            </g>
+
+            <!-- clock tower accent -->
+            <circle cx="380" cy="455" r="16" fill="none" stroke="#ffd700" stroke-width="3"/>
+            <line x1="380" y1="439" x2="380" y2="410" stroke="#ffd700" stroke-width="3"/>
+
+            <!-- lit windows -->
+            <g fill="#ffc93c" fill-opacity=".85">
+                <rect x="55" y="545" width="10" height="14"/>
+                <rect x="80" y="545" width="10" height="14"/>
+                <rect x="55" y="585" width="10" height="14"/>
+                <rect x="105" y="585" width="10" height="14"/>
+                <rect x="170" y="500" width="10" height="14"/>
+                <rect x="195" y="500" width="10" height="14"/>
+                <rect x="170" y="540" width="10" height="14"/>
+                <rect x="460" y="530" width="10" height="14"/>
+                <rect x="490" y="530" width="10" height="14"/>
+                <rect x="460" y="570" width="10" height="14"/>
+                <rect x="490" y="610" width="10" height="14"/>
+            </g>
+        </svg>
+
+        <div class="overlay">
+            <h1>SSN Alumni Network</h1>
+
+            <p>
+                Stay connected with your classmates,
+                discover alumni, attend events,
+                mentor students and give back to your college.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-panel">
+
+        <div class="login-box">
+
+            <h2>Welcome Back</h2>
+            <p>Login to continue</p>
+
+            <!-- ROLE SELECTOR -->
+            <p class="role-label">I am a</p>
+            <div class="role-pills" id="rolePills">
+                <button type="button" class="role-pill active" data-role="student">Student</button>
+                <button type="button" class="role-pill" data-role="faculty">Faculty</button>
+                <button type="button" class="role-pill" data-role="alumni">Alumni</button>
+            </div>
+
+            <div class="tab-buttons">
+                <button class="tab active" onclick="showLogin()">Login</button>
+                <button class="tab" onclick="showSignup()">Register</button>
+            </div>
+
+            <!-- LOGIN -->
+            <form id="loginForm">
+                <input type="email" placeholder="College Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+
+            <!-- SIGNUP -->
+            <form id="signupForm" style="display:none;">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="College Email" required>
+
+                <select id="signupBatch" required>
+                    <option value="">Select Batch</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                </select>
+
+                <select id="signupDept" required>
+                    <option value="">Select Department</option>
+                    <option>CSE</option>
+                    <option>IT</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>Mechanical</option>
+                    <option>Civil</option>
+                </select>
+
+                <input type="password" placeholder="Password" required>
+                <button class="btn-login">Create Account</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
