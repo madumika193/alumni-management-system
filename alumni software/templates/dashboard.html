@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SSN Alumni Dashboard</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <h2>SSN Alumni</h2>
+
+    <ul>
+
+        <li><a href="#">Dashboard</a></li>
+
+        <li><a href="#directory">Directory</a></li>
+
+        <li><a href="#events">Events</a></li>
+
+        <li><a href="#mentors">Mentorship</a></li>
+
+        <li><a href="#donation">Donation</a></li>
+
+        <li><a href="#profile">Profile</a></li>
+
+    </ul>
+
+    <button onclick="logout()">
+
+        Logout
+
+    </button>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div>
+
+        <h1>
+
+            Welcome Back,
+
+            <span id="userName">
+
+                Alumni
+
+            </span>
+
+        </h1>
+
+        <p>
+
+            Stay connected with your college and alumni network.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="cards">
+
+    <div class="card">
+
+        <h2>12,400+</h2>
+
+        <p>Registered Alumni</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>41</h2>
+
+        <p>Countries</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>96</h2>
+
+        <p>Mentors</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>18</h2>
+
+        <p>Upcoming Events</p>
+
+    </div>
+
+</section>
+
+<!-- ================= EVENTS ================= -->
+
+<section id="events">
+
+<h2 class="section-title">
+
+Upcoming Events
+
+</h2>
+
+<div class="event-container">
+
+<div class="event">
+
+<h3>Annual Alumni Meet</h3>
+
+<p>
+
+📅 14 August 2026
+
+</p>
+
+<p>
+
+📍 SSN Campus
+
+</p>
+
+<button>
+
+Register
+
+</button>
+
+</div>
+
+<div class="event">
+
+<h3>
+
+AI Workshop
+
+</h3>
+
+<p>
+
+📅 30 August
+
+</p>
+
+<p>
+
+📍 Innovation Lab
+
+</p>
+
+<button>
+
+Register
+
+</button>
+
+</div>
+
+<div class="event">
+
+<h3>
+
+Career Guidance
+
+</h3>
+
+<p>
+
+📅 5 September
+
+</p>
+
+<p>
+
+📍 Seminar Hall
+
+</p>
+
+<button>
+
+Register
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DIRECTORY ================= -->
+
+<section id="directory">
+
+<h2 class="section-title">
+
+Alumni Directory
+
+</h2>
+
+<input
+type="text"
+placeholder="Search Alumni">
+
+<div class="directory">
+
+<div class="person">
+
+<h3>
+
+Aravind
+
+</h3>
+
+<p>
+
+Zoho
+
+</p>
+
+<button>
+
+Connect
+
+</button>
+
+</div>
+
+<div class="person">
+
+<h3>
+
+Priya
+
+</h3>
+
+<p>
+
+Google
+
+</p>
+
+<button>
+
+Connect
+
+</button>
+
+</div>
+
+<div class="person">
+
+<h3>
+
+Rahul
+
+</h3>
+
+<p>
+
+Microsoft
+
+</p>
+
+<button>
+
+Connect
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MENTORS ================= -->
+
+<section id="mentors">
+
+<h2 class="section-title">
+
+Mentorship
+
+</h2>
+
+<div class="mentor-box">
+
+<h3>
+
+Need Career Guidance?
+
+</h3>
+
+<p>
+
+Connect with experienced alumni.
+
+</p>
+
+<button>
+
+Find Mentor
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= DONATION ================= -->
+
+<section id="donation">
+
+<h2 class="section-title">
+
+Support SSN
+
+</h2>
+
+<div class="donation">
+
+<p>
+
+Help students through scholarships and campus development.
+
+</p>
+
+<input
+type="number"
+placeholder="Amount">
+
+<button>
+
+Donate
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= PROFILE ================= -->
+
+<section id="profile">
+
+<h2 class="section-title">
+
+My Profile
+
+</h2>
+
+<div class="profile">
+
+<input
+type="text"
+placeholder="Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<input
+type="text"
+placeholder="Company">
+
+<input
+type="text"
+placeholder="Designation">
+
+<textarea
+placeholder="About Yourself">
+
+</textarea>
+
+<button>
+
+Save Profile
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 SSN College of Engineering Alumni Network
+
+</p>
+
+</footer>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>

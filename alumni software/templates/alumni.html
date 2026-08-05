@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSN Alumni Network - Alumni</title>
+
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="static/alumni.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+</head>
+<body class="theme-alumni">
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <h2>SSN Alumni <span class="role-tag">Alumni</span></h2>
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#jobs">Job Board</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#donation">Donation</a></li>
+    </ul>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-inner">
+        <svg class="crest" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="sheenGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                    <stop offset=".5" stop-color="#fff" stop-opacity=".9"/>
+                    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+                <clipPath id="crestClip"><circle cx="50" cy="50" r="46"/></clipPath>
+            </defs>
+            <circle class="crest-ring" cx="50" cy="50" r="46"/>
+            <circle class="crest-ring" cx="50" cy="50" r="40"/>
+            <text class="crest-mono" x="50" y="60" text-anchor="middle">SSN</text>
+            <g clip-path="url(#crestClip)">
+                <rect class="crest-sheen" x="0" y="0" width="30" height="100"/>
+            </g>
+        </svg>
+        <span class="section-eyebrow">Distinguished Alumni</span>
+        <h1>Welcome back, <span id="userName">Alumni</span></h1>
+        <p>Keep your profile current and share job openings with the SSN community.</p>
+    </div>
+</section>
+
+<!-- ================= PROFILE ================= -->
+<section id="profile">
+    <h2 class="section-title">My Profile</h2>
+
+    <div class="profile">
+        <input type="text" id="profileName" placeholder="Name">
+        <input type="email" id="profileEmail" placeholder="Email">
+        <input type="text" id="profileCompany" placeholder="Company">
+        <input type="text" id="profileDesignation" placeholder="Designation">
+        <textarea id="profileAbout" placeholder="About Yourself"></textarea>
+        <button id="saveProfileBtn">Save Profile</button>
+        <p class="save-note" id="saveNote"></p>
+    </div>
+</section>
+
+<!-- ================= JOB BOARD ================= -->
+<section id="jobs">
+    <h2 class="section-title">Post a Job Opportunity</h2>
+
+    <div class="job-form">
+        <input type="text" id="jobTitle" placeholder="Job Title">
+        <input type="text" id="jobCompany" placeholder="Company">
+        <input type="text" id="jobLocation" placeholder="Location">
+        <input type="url" id="jobLink" placeholder="Apply Link (optional)">
+        <textarea id="jobDescription" placeholder="Job Description"></textarea>
+        <button id="postJobBtn">Post Job</button>
+    </div>
+
+    <h2 class="section-title">Jobs You've Posted</h2>
+    <div class="job-list" id="jobList"></div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events">
+    <h2 class="section-title">Upcoming Events</h2>
+
+    <div class="event-container">
+        <div class="event">
+            <h3>Annual Alumni Meet</h3>
+            <p>📅 14 August 2026</p>
+            <p>📍 SSN Campus</p>
+            <button>Register</button>
+        </div>
+        <div class="event">
+            <h3>AI Workshop</h3>
+            <p>📅 30 August 2026</p>
+            <p>📍 Innovation Lab</p>
+            <button>Register</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= DONATION ================= -->
+<section id="donation">
+    <h2 class="section-title">Support SSN</h2>
+
+    <div class="donation">
+        <p>Help students through scholarships and campus development.</p>
+        <input type="number" id="donationAmount" placeholder="Amount">
+        <button id="donateBtn">Donate</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SSN College of Engineering Alumni Network</p>
+</footer>
+
+<script src="/static/common.js"></script>
+<script src="/static/alumni.js"></script>
+</body>
+</html>

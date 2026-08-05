@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSN Alumni Network - Student</title>
+
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="/static/student.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="theme-student">
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <h2>SSN Alumni <span class="role-tag">Student</span></h2>
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#directory">Alumni</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#posts">Posts</a></li>
+        <li><a href="#chat">Chat</a></li>
+    </ul>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-grid">
+        <div class="hero-inner">
+            <span class="section-eyebrow">Network Online</span>
+            <h1>Hey, <span id="userName">Student</span></h1>
+            <p>Explore alumni, catch up on events, and stay in touch with your batch — all on one campus circuit.</p>
+        </div>
+
+        <svg class="hero-circuit" viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
+            <path class="skyline" d="M0 260 V190 H40 V150 H80 V190 H120 V170 H150 V260 Z" />
+            <path class="skyline" d="M180 260 V200 H220 V160 L250 130 L280 160 V200 H320 V260 Z" />
+            <path class="trace" d="M20 150 L20 90 L120 90 L120 50" />
+            <path class="trace trace-2" d="M150 170 L150 60 L260 60 L260 20" />
+            <path class="trace trace-3" d="M300 200 L360 200 L360 100 L410 100" />
+            <circle class="node" cx="120" cy="50" r="5"/>
+            <circle class="node node-alt" cx="260" cy="20" r="5"/>
+            <circle class="node" cx="410" cy="100" r="5"/>
+            <circle class="node node-alt" cx="20" cy="150" r="4"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ================= ALUMNI DIRECTORY ================= -->
+<section id="directory">
+    <h2 class="section-title">Alumni Directory</h2>
+    <input type="text" placeholder="Search alumni by name or company">
+
+    <div class="directory">
+        <div class="person">
+            <h3>Aravind</h3>
+            <p>SDE II · Zoho · CSE 2019</p>
+            <button>Connect</button>
+        </div>
+        <div class="person">
+            <h3>Priya</h3>
+            <p>Product Manager · Google · IT 2018</p>
+            <button>Connect</button>
+        </div>
+        <div class="person">
+            <h3>Rahul</h3>
+            <p>Data Scientist · Microsoft · CSE 2020</p>
+            <button>Connect</button>
+        </div>
+        <div class="person">
+            <h3>Sneha</h3>
+            <p>UX Designer · Adobe · ECE 2017</p>
+            <button>Connect</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events">
+    <h2 class="section-title">Upcoming Events</h2>
+
+    <div class="event-container">
+        <div class="event">
+            <h3>Annual Alumni Meet</h3>
+            <p>📅 14 August 2026</p>
+            <p>📍 SSN Campus</p>
+            <button>Register</button>
+        </div>
+        <div class="event">
+            <h3>AI Workshop</h3>
+            <p>📅 30 August 2026</p>
+            <p>📍 Innovation Lab</p>
+            <button>Register</button>
+        </div>
+        <div class="event">
+            <h3>Career Guidance</h3>
+            <p>📅 5 September 2026</p>
+            <p>📍 Seminar Hall</p>
+            <button>Register</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ALUMNI POSTS ================= -->
+<section id="posts">
+    <h2 class="section-title">Alumni Posts</h2>
+
+    <div class="post-feed" id="postFeed">
+        <div class="post-card">
+            <div class="post-head">
+                <div class="post-avatar">A</div>
+                <div>
+                    <h4>Aravind <span class="post-batch">CSE 2019</span></h4>
+                    <p class="post-time">2 days ago</p>
+                </div>
+            </div>
+            <p class="post-body">Zoho is opening 12 seats for backend engineers this quarter. Happy to refer juniors — drop me a message if interested!</p>
+            <div class="post-actions">
+                <button class="like-btn">👍 Like</button>
+                <button class="comment-btn">💬 Comment</button>
+            </div>
+        </div>
+
+        <div class="post-card">
+            <div class="post-head">
+                <div class="post-avatar">P</div>
+                <div>
+                    <h4>Priya <span class="post-batch">IT 2018</span></h4>
+                    <p class="post-time">5 days ago</p>
+                </div>
+            </div>
+            <p class="post-body">Loved meeting the final-year students at the mentorship meetup last week. Keep the questions coming!</p>
+            <div class="post-actions">
+                <button class="like-btn">👍 Like</button>
+                <button class="comment-btn">💬 Comment</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CHAT ================= -->
+<section id="chat">
+    <h2 class="section-title">Campus Chat</h2>
+
+    <div class="chat-container">
+        <div class="chat-sidebar" id="chatContacts">
+            <div class="chat-contact active" data-name="Karthik" data-dept="CSE - Batch 2026">
+                <div class="chat-avatar">K</div>
+                <div>
+                    <h4>Karthik</h4>
+                    <p>CSE - Batch 2026</p>
+                </div>
+            </div>
+            <div class="chat-contact" data-name="Divya" data-dept="ECE - Batch 2026">
+                <div class="chat-avatar">D</div>
+                <div>
+                    <h4>Divya</h4>
+                    <p>ECE - Batch 2026</p>
+                </div>
+            </div>
+            <div class="chat-contact" data-name="Mohan" data-dept="IT - Batch 2027">
+                <div class="chat-avatar">M</div>
+                <div>
+                    <h4>Mohan</h4>
+                    <p>IT - Batch 2027</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-window-head">
+                <h4 id="chatWithName">Karthik</h4>
+                <p id="chatWithDept">CSE - Batch 2026</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages"></div>
+
+            <div class="chat-input-row">
+                <input type="text" id="chatInput" placeholder="Type a message...">
+                <button id="chatSendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SSN College of Engineering Alumni Network</p>
+</footer>
+
+<script src="/static/common.js"></script>
+<script src="/static/student.js"></script>
+</body>
+</html>

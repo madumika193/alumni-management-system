@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSN Alumni Network - Faculty</title>
+
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="/static/faculty.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="theme-faculty">
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <h2>SSN Alumni <span class="role-tag">Faculty</span></h2>
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#deptAlumni">Department Alumni</a></li>
+    </ul>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-grid">
+        <div class="hero-inner">
+            <span class="section-eyebrow">Department Counsellor</span>
+            <h1>Welcome, <span id="userName">Faculty</span></h1>
+            <p>Choose your department below to open its drawing — the alumni roster you counsel appears alongside it.</p>
+        </div>
+
+        <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg">
+            <rect class="blueprint-fill" x="70" y="60" width="180" height="150" />
+            <path class="blueprint-draw" d="M70 210 V60 H190 L250 100 V210 Z M70 60 H250 M190 60 V100 H250" />
+            <g class="blueprint-draw" style="animation-delay:.3s;">
+                <rect x="95" y="90" width="24" height="24"/>
+                <rect x="135" y="90" width="24" height="24"/>
+                <rect x="95" y="135" width="24" height="24"/>
+                <rect x="135" y="135" width="24" height="24"/>
+                <rect x="185" y="150" width="30" height="60"/>
+            </g>
+            <line class="blueprint-dim" x1="70" y1="222" x2="250" y2="222"/>
+            <line class="blueprint-dim" x1="70" y1="216" x2="70" y2="228"/>
+            <line class="blueprint-dim" x1="250" y1="216" x2="250" y2="228"/>
+            <text class="blueprint-label" x="140" y="234">18.0 M</text>
+            <circle class="blueprint-dim" cx="320" cy="70" r="26" fill="none"/>
+            <line class="blueprint-dim" x1="320" y1="44" x2="320" y2="96"/>
+            <line class="blueprint-dim" x1="294" y1="70" x2="346" y2="70"/>
+            <text class="blueprint-label" x="298" y="115">N</text>
+        </svg>
+    </div>
+</section>
+
+<!-- ================= DEPARTMENT SELECT ================= -->
+<section id="departments">
+    <h2 class="section-title">Choose a Department</h2>
+
+    <div class="dept-grid" id="deptGrid">
+        <div class="dept-card active" data-dept="CSE">
+            <h3>CSE</h3>
+            <p>Computer Science &amp; Engineering</p>
+        </div>
+        <div class="dept-card" data-dept="IT">
+            <h3>IT</h3>
+            <p>Information Technology</p>
+        </div>
+        <div class="dept-card" data-dept="ECE">
+            <h3>ECE</h3>
+            <p>Electronics &amp; Communication</p>
+        </div>
+        <div class="dept-card" data-dept="EEE">
+            <h3>EEE</h3>
+            <p>Electrical &amp; Electronics</p>
+        </div>
+        <div class="dept-card" data-dept="Mechanical">
+            <h3>Mechanical</h3>
+            <p>Mechanical Engineering</p>
+        </div>
+        <div class="dept-card" data-dept="Civil">
+            <h3>Civil</h3>
+            <p>Civil Engineering</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= DEPARTMENT ALUMNI ================= -->
+<section id="deptAlumni">
+    <h2 class="section-title"><span id="deptAlumniTitle">CSE</span> Alumni</h2>
+
+    <div class="directory" id="deptAlumniList"></div>
+</section>
+
+<footer>
+    <p>© 2026 SSN College of Engineering Alumni Network</p>
+</footer>
+
+<script src="/static/common.js"></script>
+<script src="/static/faculty.js"></script>
+</body>
+</html>
