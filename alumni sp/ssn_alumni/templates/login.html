@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSN Alumni Registry — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/registry.css">
+</head>
+<body>
+
+<div class="registry-scene">
+  <div class="ledger-grid"></div>
+  <span class="ghost-mark">SSN</span>
+
+  <main class="registry-card" id="registryCard">
+
+    <!-- ============ STEP 1 — ROLE SELECT ============ -->
+    <section class="step step-roles active" id="stepRoles">
+      <center><span class="eyebrow">SSN College of Engineering</span></center>
+      <center><h1>Alumni Registry</h1></center>
+      <center><p class="lede"> Choose yours to continue.</p></center>
+
+      <div class="role-deck">
+        <button type="button" class="role-card" data-role="student">
+          <span class="role-tagno"></span>
+          <svg class="role-icon" viewBox="0 0 48 48" fill="none"><path d="M24 6 4 15l20 9 20-9-20-9Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 21v10c0 3 5.4 6 12 6s12-3 12-6V21" stroke="currentColor" stroke-width="2.2"/><path d="M40 17v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span class="role-name">Student</span>
+          <span class="role-desc">Explore alumni &amp; department news</span>
+        </button>
+
+        <button type="button" class="role-card" data-role="faculty">
+          <span class="role-tagno"></span>
+          <svg class="role-icon" viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="34" height="24" rx="1.5" stroke="currentColor" stroke-width="2.2"/><path d="M7 16h34" stroke="currentColor" stroke-width="2.2"/><path d="M14 34v6M34 34v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="24" cy="25" r="4" stroke="currentColor" stroke-width="2.2"/></svg>
+          <span class="role-name">Faculty</span>
+          <span class="role-desc">Department counsellor &amp; roster</span>
+        </button>
+
+        <button type="button" class="role-card" data-role="alumni">
+          <span class="role-tagno"></span>
+          <svg class="role-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2.2"/><path d="M8 41c1.5-9 8-13.5 16-13.5S38.5 32 40 41" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M31 6l2.6 2.6L38 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="role-name">Alumni</span>
+          <span class="role-desc">Profile, mentorship &amp; job posts</span>
+        </button>
+
+        <button type="button" class="role-card" data-role="admin">
+          <span class="role-tagno"></span>
+          <svg class="role-icon" viewBox="0 0 48 48" fill="none"><path d="M24 5 40 11v11c0 11-7 18.5-16 21-9-2.5-16-10-16-21V11l16-6Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M17 24l5 5 10-11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="role-name">Admin</span>
+          <span class="role-desc">Registry oversight &amp; events</span>
+        </button>
+      </div>
+
+      <p class="reg-footnote"></p>
+    </section>
+
+    <!-- ============ STEP 2 — LOGIN / REGISTER ============ -->
+    <section class="step step-form" id="stepForm">
+      <button type="button" class="back-link" id="backBtn">&larr; Choose a different role</button>
+
+      <div class="form-head">
+        <span class="eyebrow" id="formEyebrow">Registry / Student</span>
+        <h2 id="formTitle">Student Access</h2>
+      </div>
+
+      <div class="mode-switch">
+        <button type="button" class="mode-btn active" id="tabLogin">Sign In</button>
+        <button type="button" class="mode-btn" id="tabRegister">Register</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="loginForm" class="ledger-form">
+        <label class="field">
+          <span>College email</span>
+          <input type="email" name="email" required>
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" required>
+        </label>
+        <button type="submit" class="submit-btn">Enter Registry</button>
+      </form>
+
+      <!-- REGISTER -->
+      <form id="signupForm" class="ledger-form" style="display:none;">
+        <label class="field">
+          <span>Full name</span>
+          <input type="text" name="full_name" required>
+        </label>
+        <label class="field">
+          <span>College email</span>
+          <input type="email" name="email" required>
+        </label>
+        <label class="field" id="deptField">
+          <span>Department</span>
+          <select name="department" id="signupDept" required>
+            <option value="">Select department</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+          </select>
+        </label>
+        <label class="field" id="batchField">
+          <span>Batch / Graduating year</span>
+          <select name="batch" id="signupBatch" required>
+            <option value="">Select batch</option>
+            <option>2019</option><option>2020</option><option>2021</option>
+            <option>2022</option><option>2023</option><option>2024</option>
+            <option>2025</option><option>2026</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" required>
+        </label>
+        <button type="submit" class="submit-btn">Create Registry Entry</button>
+      </form>
+
+      <div id="loginErrorBox" class="error-box" style="display:none;">
+        <p class="error-title">Invalid email, password, or role.</p>
+        <p class="error-sub">Forgot your password, or want to start over?</p>
+        <div class="error-actions">
+          <button type="button" id="forgotPasswordBtn" class="secondary-btn">Forgot password</button>
+          <button type="button" id="redDeleteBtn" class="delete-btn">Delete entry &amp; re-register</button>
+        </div>
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <form id="forgotForm" class="ledger-form" style="display:none; margin-top: 18px;">
+        <p class="error-sub" style="margin-bottom: 4px;">Resetting password for the email above. Set a new one below.</p>
+        <label class="field">
+          <span>New password</span>
+          <input type="password" name="new_password" id="newPassword" required minlength="4">
+        </label>
+        <label class="field">
+          <span>Confirm new password</span>
+          <input type="password" name="confirm_password" id="confirmPassword" required minlength="4">
+        </label>
+        <button type="submit" class="submit-btn">Update Password</button>
+        <button type="button" id="cancelForgotBtn" class="back-link" style="margin-top: 4px;">Cancel</button>
+      </form>
+    </section>
+
+  </main>
+</div>
+
+<script src="/static/registry.js"></script>
+</body>
+</html>

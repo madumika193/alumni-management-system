@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSN Alumni Registry — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/portal.css">
+</head>
+<body class="theme-admin">
+
+<nav>
+    <h2>SSN Registry <span class="role-tag">Admin</span></h2>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#post-event">Post Event</a></li>
+    </ul>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<section class="hero">
+    <h1>Registry Oversight</h1>
+    <p>Signed in as <strong id="userName">Admin</strong></p>
+</section>
+
+<section id="overview">
+    <h2 class="section-title">Registered Members</h2>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="num" id="studentCount">0</div><div class="label">Students</div></div>
+        <div class="stat-card"><div class="num" id="facultyCount">0</div><div class="label">Faculty</div></div>
+        <div class="stat-card"><div class="num" id="alumniCount">0</div><div class="label">Alumni</div></div>
+    </div>
+
+    <div class="dept-filter-row" id="deptFilterRow">
+        <button type="button" class="dept-chip active" data-dept="All">All Departments</button>
+        <button type="button" class="dept-chip" data-dept="CSE">CSE</button>
+        <button type="button" class="dept-chip" data-dept="IT">IT</button>
+        <button type="button" class="dept-chip" data-dept="ECE">ECE</button>
+        <button type="button" class="dept-chip" data-dept="EEE">EEE</button>
+        <button type="button" class="dept-chip" data-dept="Mechanical">Mechanical</button>
+        <button type="button" class="dept-chip" data-dept="Civil">Civil</button>
+    </div>
+
+    <p style="color: var(--muted); font-size: 13.5px; margin: 20px 0 12px;">Students</p>
+    <div class="directory" id="studentList" style="margin-bottom: 30px;"></div>
+
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 12px;">Faculty</p>
+    <div class="directory" id="facultyList" style="margin-bottom: 30px;"></div>
+
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 12px;">Alumni</p>
+    <div class="directory" id="alumniList"></div>
+</section>
+
+<section id="post-event">
+    <h2 class="section-title">Publish a Registry Event</h2>
+    <form id="eventForm" class="ledger-panel">
+        <input type="text" id="eventTitle" placeholder="Event Title" required>
+        <input type="date" id="eventDate" required>
+        <p class="field-note">Only today or a future date can be selected.</p>
+        <input type="text" id="eventLocation" placeholder="Location / Venue" required>
+        <select id="eventDept" required>
+            <option value="All">All Departments</option>
+            <option>CSE</option><option>IT</option><option>ECE</option>
+            <option>EEE</option><option>Mechanical</option><option>Civil</option>
+        </select>
+        <button type="submit">Publish Event</button>
+        <p class="save-note" id="eventNote"></p>
+    </form>
+</section>
+
+<footer>SSN College of Engineering · Alumni Registry</footer>
+
+<script src="/static/admin.js"></script>
+</body>
+</html>
